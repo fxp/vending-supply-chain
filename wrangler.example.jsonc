@@ -8,6 +8,9 @@
   // Your Cloudflare account ID (wrangler whoami)
   "account_id": "YOUR_ACCOUNT_ID",
 
+  // Static dashboard (public/index.html) served at /
+  "assets": { "directory": "./public" },
+
   "kv_namespaces": [
     {
       "binding": "SC_KV",
@@ -15,6 +18,12 @@
       "id": "YOUR_KV_NAMESPACE_ID"
     }
   ],
+
+  // WebSocket dashboard live-stream (DashboardRoom in src/index.ts)
+  "durable_objects": {
+    "bindings": [{ "name": "DASHBOARD", "class_name": "DashboardRoom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_classes": ["DashboardRoom"] }],
 
   "triggers": {
     // Run daily auto-order at 02:00 UTC
