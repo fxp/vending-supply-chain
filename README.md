@@ -3,6 +3,8 @@
 Standalone supply chain management API for vending machine networks.  
 Built as a single Cloudflare Worker with KV for persistence. No database, no server.
 
+📖 **Full API reference: [API.md](API.md)**
+
 ## API overview
 
 | Endpoint | Description |
